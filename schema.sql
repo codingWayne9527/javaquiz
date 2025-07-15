@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS questions (
+    id SERIAL PRIMARY KEY,
+    text VARCHAR(255) NOT NULL,
+    option1 VARCHAR(255) NOT NULL,
+    option2 VARCHAR(255) NOT NULL,
+    option3 VARCHAR(255) NOT NULL,
+    option4 VARCHAR(255) NOT NULL,
+    correct INTEGER NOT NULL
+);
