@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Java Quiz</title>
+</head>
+<body>
+<h1>Java Quiz</h1>
+<form th:action="@{/submit}" method="post">
+    <div th:each="q : ${questions}">
+        <p th:text="${q.text}"></p>
+        <label><input type="radio" th:name="${'q' + q.id}" value="1"/> <span th:text="${q.option1}"></span></label><br/>
+        <label><input type="radio" th:name="${'q' + q.id}" value="2"/> <span th:text="${q.option2}"></span></label><br/>
+        <label><input type="radio" th:name="${'q' + q.id}" value="3"/> <span th:text="${q.option3}"></span></label><br/>
+        <label><input type="radio" th:name="${'q' + q.id}" value="4"/> <span th:text="${q.option4}"></span></label>
+        <br/><br/>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+<div th:if="${score != null}">
+    <h2>Your Score: <span th:text="${score}"></span>/5</h2>
+</div>
+</body>
+</html>
